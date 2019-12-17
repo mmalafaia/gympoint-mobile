@@ -7,22 +7,13 @@ import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
   try {
-    const { email, password } = payload;
+    const { email } = payload;
 
     const response = yield call(api.post, 'sessions', {
       email,
-      password,
     });
 
     const { token, user } = response.data;
-
-    if (user.provider) {
-      Alert.alert(
-        'Erro no login',
-        'O Usuário não pode ser prestador de serviços'
-      );
-      return;
-    }
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
@@ -34,27 +25,6 @@ export function* signIn({ payload }) {
       'Falha na autenticação',
       'Houve erro no login, verifique seus dados.'
     );
-    yield put(signFailure());
-  }
-}
-
-export function* signUp({ payload }) {
-  try {
-    const { name, email, password } = payload;
-
-    yield call(api.post, 'users', {
-      name,
-      email,
-      password,
-    });
-
-    // history.push('/');
-  } catch (error) {
-    Alert.alert(
-      'Falha no cadastro',
-      'Houve erro no cadastro, verifique seus dados.'
-    );
-
     yield put(signFailure());
   }
 }
@@ -72,5 +42,4 @@ export function setToken({ payload }) {
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
 ]);
