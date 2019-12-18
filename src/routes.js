@@ -11,7 +11,7 @@ import SelectProvider from './pages/New/SelectProvider';
 import SelectDateTime from './pages/New/SelectDateTime';
 import Confirm from './pages/New/Confirm';
 
-import Dashboard from './pages/Dashboard';
+import CheckIn from './pages/CheckIn';
 import Profile from './pages/Profile';
 
 export default (signIn = false) =>
@@ -24,7 +24,7 @@ export default (signIn = false) =>
         }),
         App: createBottomTabNavigator(
           {
-            Dashboard,
+            CheckIn,
             New: {
               screen: createStackNavigator(
                 {
@@ -47,14 +47,13 @@ export default (signIn = false) =>
                 tabBarLabel: 'Agendar',
                 tabBarIcon: (
                   <Icon
-                    name="add-circle-outline"
+                    name="live-help"
                     size={20}
                     color="rgba(255, 255, 255, 0.6)"
                   />
                 ),
               },
             },
-            Profile,
           },
           {
             resetOnBlur: true,

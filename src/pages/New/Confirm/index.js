@@ -57,7 +57,7 @@ Confirm.navigationOptions = ({ navigation }) => ({
         navigation.goBack();
       }}
     >
-      <Icon name="chevron-left" size={20} color="#FFF" />
+      <Icon name="live-help" size={20} color="#FFF" />
     </TouchableOpacity>
   ),
 });

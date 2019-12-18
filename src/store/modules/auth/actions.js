@@ -1,4 +1,5 @@
 export function signInRequest(email) {
+  console.tron.warn('sign request');
   return {
     type: '@auth/SIGN_IN_REQUEST',
     payload: { email },
