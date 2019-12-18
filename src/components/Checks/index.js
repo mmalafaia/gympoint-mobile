@@ -6,11 +6,11 @@ import { Container, Left, Info, Name, When } from './styles';
 
 export default function Checks({ data }) {
   const dateParsed = useMemo(() => {
-    return formatRelative(parseISO(data.created_at), new Date(), {
+    return formatRelative(parseISO(data.createdAt), new Date(), {
       locale: pt,
       addSuffix: true,
     });
-  }, [data.created_at]);
+  }, [data.createdAt]);
 
   return (
     <Container>

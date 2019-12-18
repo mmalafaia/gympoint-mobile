@@ -2,9 +2,10 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   margin-bottom: 15px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 4px;
   background: #fff;
+  border: 1px solid #ddd;
 
   display: flex;
   flex-direction: row;
@@ -29,7 +30,7 @@ export const Name = styled.Text`
 `;
 
 export const When = styled.Text`
-  color: #999;
-  font-size: 13px;
+  color: #666;
+  font-size: 14px;
   margin-top: 4px;
 `;

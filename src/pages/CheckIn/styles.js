@@ -6,14 +6,6 @@ export const Container = styled.SafeAreaView`
   background: #f2f2f2;
 `;
 
-export const Title = styled.Text`
-  font-size: 20px;
-  color: #fff;
-  font-weight: bold;
-  align-self: center;
-  margin-top: 30px;
-`;
-
 export const AddButton = styled(Button)`
   margin: 0 20px;
   margin-top: 20px;

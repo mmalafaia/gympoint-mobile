@@ -12,7 +12,6 @@ import SelectDateTime from './pages/New/SelectDateTime';
 import Confirm from './pages/New/Confirm';
 
 import CheckIn from './pages/CheckIn';
-import Profile from './pages/Profile';
 
 export default (signIn = false) =>
   createAppContainer(
@@ -35,7 +34,7 @@ export default (signIn = false) =>
                 {
                   defaultNavigationOptions: {
                     headerTransparent: true,
-                    headerTintColor: '#FFF',
+                    headerTintColor: '#fff',
                     headerLeftContainerStyle: {
                       marginLeft: 20,
                     },
@@ -44,14 +43,8 @@ export default (signIn = false) =>
               ),
               navigationOptions: {
                 tabBarVisible: false,
-                tabBarLabel: 'Agendar',
-                tabBarIcon: (
-                  <Icon
-                    name="live-help"
-                    size={20}
-                    color="rgba(255, 255, 255, 0.6)"
-                  />
-                ),
+                tabBarLabel: 'Pedir ajuda',
+                tabBarIcon: <Icon name="live-help" size={20} color="#000" />,
               },
             },
           },
@@ -59,10 +52,10 @@ export default (signIn = false) =>
             resetOnBlur: true,
             tabBarOptions: {
               keyboardHidesTabBar: true,
-              activeTintColor: '#FFF',
+              activeTintColor: '#ee4e62',
               inactiveTintColor: 'rgba(255,255,255, 0.6)',
               style: {
-                backgroundColor: '#8d41a8',
+                backgroundColor: '#fff',
               },
             },
           }
