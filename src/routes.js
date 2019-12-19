@@ -7,9 +7,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
-import SelectProvider from './pages/New/SelectProvider';
-import SelectDateTime from './pages/New/SelectDateTime';
-import Confirm from './pages/New/Confirm';
+import List from './pages/HelpOrder/List';
+import Show from './pages/HelpOrder/Show';
+import Add from './pages/HelpOrder/Add';
 
 import CheckIn from './pages/CheckIn';
 
@@ -27,9 +27,9 @@ export default (signIn = false) =>
             New: {
               screen: createStackNavigator(
                 {
-                  SelectProvider,
-                  SelectDateTime,
-                  Confirm,
+                  List,
+                  Show,
+                  Add,
                 },
                 {
                   defaultNavigationOptions: {
@@ -44,7 +44,7 @@ export default (signIn = false) =>
               navigationOptions: {
                 tabBarVisible: false,
                 tabBarLabel: 'Pedir ajuda',
-                tabBarIcon: <Icon name="live-help" size={20} color="#000" />,
+                tabBarIcon: <Icon name="live-help" size={20} />,
               },
             },
           },

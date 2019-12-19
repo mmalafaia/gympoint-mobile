@@ -48,6 +48,6 @@ CheckIn.navigationOptions = {
 
 export default withNavigationFocus(CheckIn);
 
-CheckIn.prototype = {
+CheckIn.protoType = {
   isFocused: PropTypes.bool,
 };

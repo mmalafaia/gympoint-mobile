@@ -9,7 +9,7 @@ import Background from '~/components/Background';
 
 import { Container, Avatar, Name, Time, SubmitButton } from './styles';
 
-export default function Confirm({ navigation }) {
+export default function Add({ navigation }) {
   const provider = navigation.getParam('provider');
   const time = navigation.getParam('time');
 
@@ -49,7 +49,7 @@ export default function Confirm({ navigation }) {
   );
 }
 
-Confirm.navigationOptions = ({ navigation }) => ({
+Add.navigationOptions = ({ navigation }) => ({
   title: 'Confirmar agendamento',
   headerLeft: () => (
     <TouchableOpacity
