@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import api from '~/services/api';
 import Checks from '~/components/Checks';
+import Header from '~/components/Header';
 
 import { Container, AddButton, List } from './styles';
 
@@ -26,6 +27,7 @@ function CheckIn({ isFocused }) {
 
   return (
     <Container>
+      <Header />
       <AddButton>Novo check-in</AddButton>
 
       <List
