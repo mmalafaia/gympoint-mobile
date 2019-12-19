@@ -4,7 +4,6 @@ import { withNavigationFocus } from 'react-navigation';
 import PropTypes from 'prop-types';
 
 import api from '~/services/api';
-import Background from '~/components/Background';
 import Checks from '~/components/Checks';
 
 import { Container, AddButton, List } from './styles';
@@ -26,17 +25,15 @@ function CheckIn({ isFocused }) {
   }, [isFocused]);
 
   return (
-    <Background>
-      <Container>
-        <AddButton>Novo check-in</AddButton>
+    <Container>
+      <AddButton>Novo check-in</AddButton>
 
-        <List
-          data={checkins}
-          keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => <Checks data={item} />}
-        />
-      </Container>
-    </Background>
+      <List
+        data={checkins}
+        keyExtractor={item => String(item.id)}
+        renderItem={({ item }) => <Checks data={item} />}
+      />
+    </Container>
   );
 }
 
@@ -46,8 +43,12 @@ CheckIn.navigationOptions = {
   ),
 };
 
-export default withNavigationFocus(CheckIn);
-
 CheckIn.protoType = {
   isFocused: PropTypes.bool,
 };
+
+CheckIn.defaultProps = {
+  isFocused: false,
+};
+
+export default withNavigationFocus(CheckIn);

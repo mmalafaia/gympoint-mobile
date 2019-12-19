@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
 
 import List from './pages/HelpOrder/List';
 import Show from './pages/HelpOrder/Show';
@@ -19,7 +18,6 @@ export default (signIn = false) =>
       {
         Sign: createSwitchNavigator({
           SignIn,
-          SignUp,
         }),
         App: createBottomTabNavigator(
           {
