@@ -6,11 +6,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import SignIn from './pages/SignIn';
 
+import CheckIn from './pages/CheckIn';
 import List from './pages/HelpOrder/List';
 import Show from './pages/HelpOrder/Show';
 import Add from './pages/HelpOrder/Add';
-
-import CheckIn from './pages/CheckIn';
 
 export default (signIn = false) =>
   createAppContainer(
@@ -22,7 +21,7 @@ export default (signIn = false) =>
         App: createBottomTabNavigator(
           {
             CheckIn,
-            New: {
+            HelpOrder: {
               screen: createStackNavigator(
                 {
                   List,
@@ -31,8 +30,8 @@ export default (signIn = false) =>
                 },
                 {
                   defaultNavigationOptions: {
+                    headerShown: false,
                     headerTransparent: true,
-                    headerTintColor: '#fff',
                     headerLeftContainerStyle: {
                       marginLeft: 20,
                     },
@@ -40,9 +39,10 @@ export default (signIn = false) =>
                 }
               ),
               navigationOptions: {
-                tabBarVisible: false,
-                tabBarLabel: 'Pedir ajuda',
-                tabBarIcon: <Icon name="live-help" size={20} />,
+                tabBarLabel: 'Pedir Ajuda',
+                tabBarIcon: ({ tintColor }) => (
+                  <Icon name="live-help" size={20} color={tintColor} />
+                ),
               },
             },
           },
@@ -51,7 +51,7 @@ export default (signIn = false) =>
             tabBarOptions: {
               keyboardHidesTabBar: true,
               activeTintColor: '#ee4e62',
-              inactiveTintColor: 'rgba(255,255,255, 0.6)',
+              inactiveTintColor: '#999',
               style: {
                 backgroundColor: '#fff',
               },
