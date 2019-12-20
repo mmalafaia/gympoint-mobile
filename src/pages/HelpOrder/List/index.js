@@ -47,13 +47,15 @@ export default function List({ navigation }) {
       <QuestionsList
         data={questions}
         keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => (
-          <Line onPress={() => navigation.navigate('Show', { item })}>
+        renderItem={({ item: helpOrder }) => (
+          <Line onPress={() => navigation.navigate('Show', { helpOrder })}>
             <LineTop>
-              <QuestionState answered={item.answer}>Respondido</QuestionState>
-              <QuestionDate>{item.formattedDate}</QuestionDate>
+              <QuestionState answered={helpOrder.answer}>
+                Respondido
+              </QuestionState>
+              <QuestionDate>{helpOrder.formattedDate}</QuestionDate>
             </LineTop>
-            <QuestionText>{item.question}</QuestionText>
+            <QuestionText>{helpOrder.question}</QuestionText>
           </Line>
         )}
       />

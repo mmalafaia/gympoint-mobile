@@ -1,14 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
 import Header from '~/components/Header';
-// import { Container } from './styles';
+import { Container, Box, LineTop, Title, Memo, When } from './styles';
 
-export default function Show() {
+export default function Show({ navigation }) {
+  const helpOrder = navigation.getParam('helpOrder');
+
   return (
-    <View>
+    <Container>
       <Header />
-      <Text>Show</Text>
-    </View>
+      <Box>
+        <LineTop>
+          <Title>PERGUNTA</Title>
+          <When>{helpOrder.formattedDate}</When>
+        </LineTop>
+        <Memo>{helpOrder.question}</Memo>
+        <Title>RESPOSTA</Title>
+        <Memo>{helpOrder.answer}</Memo>
+      </Box>
+    </Container>
   );
 }
