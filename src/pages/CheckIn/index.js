@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useSelector } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { withNavigationFocus } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -11,11 +12,10 @@ import { Container, AddButton, List } from './styles';
 
 function CheckIn({ isFocused }) {
   const [checkins, setCheckins] = useState([]);
-  //const user = useSelector(state => state.user);
-  console.tron.warn('Voltar no Checkin e corrigir variável');
+  const id = useSelector(state => state.user.profile.id);
 
   async function loadCheckins() {
-    const response = await api.get(`students/${1}/checking`);
+    const response = await api.get(`students/${id}/checking`);
 
     setCheckins(response.data);
   }

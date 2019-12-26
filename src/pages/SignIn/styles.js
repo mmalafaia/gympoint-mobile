@@ -13,6 +13,7 @@ export const Container = styled.KeyboardAvoidingView.attrs({
   justify-content: center;
   align-items: center;
   padding: 0 30px;
+  background: #fff;
 `;
 
 export const Text = styled.Text`

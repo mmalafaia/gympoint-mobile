@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { parseISO, formatRelative } from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -22,8 +23,8 @@ export default function List({ navigation }) {
 
   useEffect(() => {
     async function loadQuestions() {
-      const student_id = 1;
-      const response = await api.get(`/students/${student_id}/help-orders`);
+      const id = useSelector(state => state.user.profile.id);
+      const response = await api.get(`/students/${id}/help-orders`);
 
       const data = response.data.map(resp => ({
         ...resp,
