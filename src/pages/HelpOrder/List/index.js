@@ -20,10 +20,10 @@ import {
 
 export default function List({ navigation }) {
   const [questions, setQuestions] = useState([]);
+  const id = useSelector(state => state.user.profile.id);
 
   useEffect(() => {
     async function loadQuestions() {
-      const id = useSelector(state => state.user.profile.id);
       const response = await api.get(`/students/${id}/help-orders`);
 
       const data = response.data.map(resp => ({
@@ -37,7 +37,7 @@ export default function List({ navigation }) {
       setQuestions(data);
     }
     loadQuestions();
-  }, []);
+  }, [id]);
 
   return (
     <Container>
